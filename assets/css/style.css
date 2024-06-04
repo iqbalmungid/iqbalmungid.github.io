@@ -4,6 +4,7 @@ body {
 }
 
 .vertical-nav {
+    position: fixed;
     min-width: 230px;
     height: 100vh;
     background-color: #f8f9fa;
@@ -34,13 +35,19 @@ body {
 .content {
     flex-grow: 1;
     padding: 20px;
+    margin-left: 230px;
+    margin-bottom: 30px;
 }
 
 .content div {
     display: none;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
-.content .active {
+.content .active,
+.content .banner-image,
+.content .container {
     display: block;
 }
 
@@ -79,6 +86,45 @@ body {
     text-decoration: none;
 }
 
+.banner-image {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-image img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.content .fab-down {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.content .fab-down:hover {
+    transform: rotate(360deg);
+}
+
+.content .fab-up {
+    display: none;
+    bottom: 86px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 .mobile-footer {
     display: none;
 }
@@ -96,6 +142,10 @@ body {
         display: block;
     }
 
+    .content {
+        margin-left: 0;
+    }
+
     .mobile-footer {
         display: block;
         position: fixed;
@@ -103,6 +153,7 @@ body {
         left: 0;
         right: 0;
         margin: 10px 20px 0 20px;
+        background-color: white;
         border-top: 1px solid #696969;
         text-align: center;
     }
