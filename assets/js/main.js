@@ -25,6 +25,7 @@ $(document).ready(function () {
     $("#" + page).addClass("active");
     $(".nav-link").removeClass("active");
     $(this).addClass("active");
+    currentSectionIndex = sections.indexOf(page);
     toggleFabFirst();
     toggleFabLast();
   });
